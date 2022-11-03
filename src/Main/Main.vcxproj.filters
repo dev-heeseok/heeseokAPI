@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="__meta__">
+      <UniqueIdentifier>{ae1ed6ec-d5e0-45b3-b8db-33c00a13d133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__resource__">
+      <UniqueIdentifier>{25a324ec-fd63-4014-ae28-afebbc344562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__resource_file__">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="MAIN">
+      <UniqueIdentifier>{921416b6-c4c7-437a-a1be-1a6a7e38c9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN_INTERFACE">
+      <UniqueIdentifier>{a37dcb93-e8ad-44cf-9180-fd2a2e015300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN\Frame">
+      <UniqueIdentifier>{b38d4f5d-2283-40e5-a616-32a4995340f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>__resource__</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>MAIN</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDoc.h">
+      <Filter>MAIN</Filter>
+    </ClInclude>
+    <ClInclude Include="MainView.h">
+      <Filter>MAIN</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>MAIN\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="calendarbar.h">
+      <Filter>MAIN\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>MAIN\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDoc.cpp">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MainView.cpp">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>__meta__</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>MAIN\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="calendarbar.cpp">
+      <Filter>MAIN\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>MAIN\Frame</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Main.reg" />
+    <None Include="res\ribbon.mfcribbon-ms">
+      <Filter>__resource_file__</Filter>
+    </None>
+    <None Include="res\Main.rc2">
+      <Filter>__resource__</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\nav_large.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\nav_large_hc.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\pages.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\pages_hc.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\pages_small.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\pages_small_hc.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\info.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\buttons.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\filelarge.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\filesmall.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\main.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\writelarge.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\writesmall.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\MainDoc.ico">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\Main.ico">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>__resource_file__</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Main.rc">
+      <Filter>__resource__</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
