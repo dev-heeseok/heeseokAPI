@@ -30,12 +30,12 @@
 
 // CMainView
 
-IMPLEMENT_DYNCREATE(CMainView, CView)
+IMPLEMENT_DYNCREATE(CMainView, CViewBase)
 
-BEGIN_MESSAGE_MAP(CMainView, CView)
+BEGIN_MESSAGE_MAP(CMainView, CViewBase)
 	// 표준 인쇄 명령입니다.
-	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
-	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
+	ON_COMMAND(ID_FILE_PRINT, &CViewBase::OnFilePrint)
+	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CViewBase::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CMainView::OnFilePrintPreview)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
@@ -58,7 +58,7 @@ BOOL CMainView::PreCreateWindow(CREATESTRUCT& cs)
 	// TODO: CREATESTRUCT cs를 수정하여 여기에서
 	//  Window 클래스 또는 스타일을 수정합니다.
 
-	return CView::PreCreateWindow(cs);
+	return CViewBase::PreCreateWindow(cs);
 }
 
 // CMainView 그리기
@@ -119,12 +119,12 @@ void CMainView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 #ifdef _DEBUG
 void CMainView::AssertValid() const
 {
-	CView::AssertValid();
+	CViewBase::AssertValid();
 }
 
 void CMainView::Dump(CDumpContext& dc) const
 {
-	CView::Dump(dc);
+	CViewBase::Dump(dc);
 }
 
 CMainDoc* CMainView::GetDocument() const // 디버그되지 않은 버전은 인라인으로 지정됩니다.

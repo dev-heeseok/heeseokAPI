@@ -14,8 +14,9 @@
 
 #pragma once
 
+#include "../API_BASE/ViewBase.h"
 
-class CMainView : public CView
+class CMainView : public CViewBase
 {
 protected: // serialization에서만 만들어집니다.
 	CMainView() noexcept;

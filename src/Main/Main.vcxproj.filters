@@ -14,11 +14,17 @@
     <Filter Include="MAIN">
       <UniqueIdentifier>{921416b6-c4c7-437a-a1be-1a6a7e38c9fd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MAIN_INTERFACE">
-      <UniqueIdentifier>{a37dcb93-e8ad-44cf-9180-fd2a2e015300}</UniqueIdentifier>
+    <Filter Include="MAIN_FRAME">
+      <UniqueIdentifier>{54717787-aa13-4339-9caa-3ecbe3d69cca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MAIN\Frame">
-      <UniqueIdentifier>{b38d4f5d-2283-40e5-a616-32a4995340f8}</UniqueIdentifier>
+    <Filter Include="MAIN_FRAME\Category">
+      <UniqueIdentifier>{dc45acf2-c68d-4f45-a82e-ed7a264c6e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN_FRAME\Category\Implement">
+      <UniqueIdentifier>{12fbd1ce-4c34-46b2-8d82-e23df272a07e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN_FRAME\Category\Interface">
+      <UniqueIdentifier>{e521955d-a9a7-4267-bf91-196e527bbc74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,17 +46,26 @@
     <ClInclude Include="targetver.h">
       <Filter>__meta__</Filter>
     </ClInclude>
-    <ClInclude Include="ChildFrm.h">
-      <Filter>MAIN\Frame</Filter>
-    </ClInclude>
-    <ClInclude Include="calendarbar.h">
-      <Filter>MAIN\Frame</Filter>
-    </ClInclude>
-    <ClInclude Include="MainFrm.h">
-      <Filter>MAIN\Frame</Filter>
-    </ClInclude>
     <ClInclude Include="framework.h">
       <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="calendarbar.h">
+      <Filter>MAIN_FRAME</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>MAIN_FRAME</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>MAIN_FRAME</Filter>
+    </ClInclude>
+    <ClInclude Include="MainCategoryManager.h">
+      <Filter>MAIN_FRAME\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="MainCategoryDevelop.h">
+      <Filter>MAIN_FRAME\Category\Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="MainCategoryBase.h">
+      <Filter>MAIN_FRAME\Category\Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -66,14 +81,23 @@
     <ClCompile Include="pch.cpp">
       <Filter>__meta__</Filter>
     </ClCompile>
-    <ClCompile Include="ChildFrm.cpp">
-      <Filter>MAIN\Frame</Filter>
-    </ClCompile>
     <ClCompile Include="calendarbar.cpp">
-      <Filter>MAIN\Frame</Filter>
+      <Filter>MAIN_FRAME</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>MAIN_FRAME</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
-      <Filter>MAIN\Frame</Filter>
+      <Filter>MAIN_FRAME</Filter>
+    </ClCompile>
+    <ClCompile Include="MainCategoryManager.cpp">
+      <Filter>MAIN_FRAME\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="MainCategoryDevelop.cpp">
+      <Filter>MAIN_FRAME\Category\Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="MainCategoryBase.cpp">
+      <Filter>MAIN_FRAME\Category\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -17,6 +17,7 @@
 #include "Main.h"
 
 #include "MainFrm.h"
+#include "MainCategoryManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -42,6 +43,8 @@ CMainFrame::CMainFrame() noexcept
 {
 	// TODO: 여기에 멤버 초기화 코드를 추가합니다.
 	theApp.m_nAppLook = theApp.GetInt(_T("ApplicationLook"), ID_VIEW_APPLOOK_OFF_2007_BLUE);
+
+	m_pCategoryMgr = std::make_shared<CMainCategoryManager>();
 }
 
 CMainFrame::~CMainFrame()
@@ -65,6 +68,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	m_wndRibbonBar.Create(this);
 	m_wndRibbonBar.LoadFromResource(IDR_RIBBON);
+
+	if (auto pCategoryMgr = m_pCategoryMgr.get())
+		pCategoryMgr->SetMenu(&m_wndRibbonBar);
 
 	if (!m_wndStatusBar.Create(this))
 	{

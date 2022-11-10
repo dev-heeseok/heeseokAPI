@@ -13,8 +13,13 @@
 //
 
 #pragma once
+
 #include "CalendarBar.h"
 #include "Resource.h"
+
+#include <memory>
+
+class CMainCategoryManager;
 
 class COutlookBar : public CMFCOutlookBar
 {
@@ -67,14 +72,19 @@ protected:
 	afx_msg void OnOptions();
 	DECLARE_MESSAGE_MAP()
 
+protected:
 	BOOL CreateOutlookBar(CMFCOutlookBar& bar, UINT uiID, CMFCShellTreeCtrl& tree, CCalendarBar& calendar, int nInitialWidth);
 	BOOL CreateCaptionBar();
 
 	int FindFocusedOutlookWnd(CMFCOutlookBarTabCtrl** ppOutlookWnd);
 
 	CMFCOutlookBarTabCtrl* FindOutlookParent(CWnd* pWnd);
+
+protected:
 	CMFCOutlookBarTabCtrl* m_pCurrOutlookWnd;
 	CMFCOutlookBarPane*    m_pCurrOutlookPage;
+
+	std::shared_ptr<CMainCategoryManager> m_pCategoryMgr = nullptr;
 };
 
 

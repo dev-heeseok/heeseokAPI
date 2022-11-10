@@ -15,8 +15,9 @@
 
 #pragma once
 
+#include "../API_BASE/DocBase.h"
 
-class CMainDoc : public CDocument
+class CMainDoc : public CDocBase
 {
 protected: // serialization에서만 만들어집니다.
 	CMainDoc() noexcept;

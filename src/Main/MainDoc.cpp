@@ -30,9 +30,9 @@
 
 // CMainDoc
 
-IMPLEMENT_DYNCREATE(CMainDoc, CDocument)
+IMPLEMENT_DYNCREATE(CMainDoc, CDocBase)
 
-BEGIN_MESSAGE_MAP(CMainDoc, CDocument)
+BEGIN_MESSAGE_MAP(CMainDoc, CDocBase)
 END_MESSAGE_MAP()
 
 
@@ -50,7 +50,7 @@ CMainDoc::~CMainDoc()
 
 BOOL CMainDoc::OnNewDocument()
 {
-	if (!CDocument::OnNewDocument())
+	if (!CDocBase::OnNewDocument())
 		return FALSE;
 
 	// TODO: 여기에 재초기화 코드를 추가합니다.
@@ -135,12 +135,12 @@ void CMainDoc::SetSearchContent(const CString& value)
 #ifdef _DEBUG
 void CMainDoc::AssertValid() const
 {
-	CDocument::AssertValid();
+	CDocBase::AssertValid();
 }
 
 void CMainDoc::Dump(CDumpContext& dc) const
 {
-	CDocument::Dump(dc);
+	CDocBase::Dump(dc);
 }
 #endif //_DEBUG
 
