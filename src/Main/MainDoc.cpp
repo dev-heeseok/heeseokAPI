@@ -1,18 +1,4 @@
-﻿// 이 MFC 샘플 소스 코드는 MFC Microsoft Office Fluent 사용자 인터페이스("Fluent UI")를
-// 사용하는 방법을 보여 주며, MFC C++ 라이브러리 소프트웨어에 포함된
-// Microsoft Foundation Classes Reference 및 관련 전자 문서에 대해
-// 추가적으로 제공되는 내용입니다.
-// Fluent UI를 복사, 사용 또는 배포하는 데 대한 사용 약관은 별도로 제공됩니다.
-// Fluent UI 라이선싱 프로그램에 대한 자세한 내용은
-// https://go.microsoft.com/fwlink/?LinkId=238214.
-//
-// Copyright (C) Microsoft Corporation
-// All rights reserved.
-
-// MainDoc.cpp: CMainDoc 클래스의 구현
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include "framework.h"
 // SHARED_HANDLERS는 미리 보기, 축소판 그림 및 검색 필터 처리기를 구현하는 ATL 프로젝트에서 정의할 수 있으며
 // 해당 프로젝트와 문서 코드를 공유하도록 해 줍니다.
@@ -28,15 +14,7 @@
 #define new DEBUG_NEW
 #endif
 
-// CMainDoc
-
 IMPLEMENT_DYNCREATE(CMainDoc, CDocBase)
-
-BEGIN_MESSAGE_MAP(CMainDoc, CDocBase)
-END_MESSAGE_MAP()
-
-
-// CMainDoc 생성/소멸
 
 CMainDoc::CMainDoc() noexcept
 {
@@ -47,6 +25,26 @@ CMainDoc::CMainDoc() noexcept
 CMainDoc::~CMainDoc()
 {
 }
+
+BEGIN_MESSAGE_MAP(CMainDoc, CDocBase)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_BTN, ID_MAIN_RBMENU_DEV_EXAMPLE_BTN, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_CHK, ID_MAIN_RBMENU_DEV_EXAMPLE_CHK, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_CMB, ID_MAIN_RBMENU_DEV_EXAMPLE_CMB, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB, ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2, OnRibbonCategory)
+	ON_COMMAND_RANGE(ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN, ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN, OnRibbonCategory)
+
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_BTN, ID_MAIN_RBMENU_DEV_EXAMPLE_BTN, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_CHK, ID_MAIN_RBMENU_DEV_EXAMPLE_CHK, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_CMB, ID_MAIN_RBMENU_DEV_EXAMPLE_CMB, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB, ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2, ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2, OnRibbonCategoryUI)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN, ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN, OnRibbonCategoryUI)
+END_MESSAGE_MAP()
 
 BOOL CMainDoc::OnNewDocument()
 {
@@ -59,10 +57,20 @@ BOOL CMainDoc::OnNewDocument()
 	return TRUE;
 }
 
+BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
+{
+	return CDocBase::OnOpenDocument(lpszPathName);
+}
 
+BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
+{
+	return CDocBase::OnSaveDocument(lpszPathName);
+}
 
-
-// CMainDoc serialization
+void CMainDoc::OnCloseDocument()
+{
+	CDocBase::OnCloseDocument();
+}
 
 void CMainDoc::Serialize(CArchive& ar)
 {
@@ -87,7 +95,7 @@ void CMainDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 	CString strText = _T("TODO: implement thumbnail drawing here");
 	LOGFONT lf;
 
-	CFont* pDefaultGUIFont = CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT));
+	CFont* pDefaultGUIFont = CFont::FromHandle((HFONT)GetStockObject(DEFAULT_GUI_FONT));
 	pDefaultGUIFont->GetLogFont(&lf);
 	lf.lfHeight = 36;
 
@@ -118,7 +126,7 @@ void CMainDoc::SetSearchContent(const CString& value)
 	}
 	else
 	{
-		CMFCFilterChunkValueImpl *pChunk = nullptr;
+		CMFCFilterChunkValueImpl* pChunk = nullptr;
 		ATLTRY(pChunk = new CMFCFilterChunkValueImpl);
 		if (pChunk != nullptr)
 		{
@@ -129,8 +137,6 @@ void CMainDoc::SetSearchContent(const CString& value)
 }
 
 #endif // SHARED_HANDLERS
-
-// CMainDoc 진단
 
 #ifdef _DEBUG
 void CMainDoc::AssertValid() const
@@ -144,5 +150,45 @@ void CMainDoc::Dump(CDumpContext& dc) const
 }
 #endif //_DEBUG
 
+void CMainDoc::OnRibbonCategory(UINT uiResID)
+{
+	switch (uiResID)
+	{
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_BTN:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_CHK:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_CMB:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2:
+	case ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN:
+	{
 
-// CMainDoc 명령
+	}
+	break;
+	default:
+		break;
+	}
+}
+
+void CMainDoc::OnRibbonCategoryUI(CCmdUI* pCmdUI)
+{
+	switch (pCmdUI->m_nID)
+	{
+
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_BTN:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_CHK:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_CMB:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_EDIT_CMB:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM1:
+	case ID_MAIN_RBMENU_DEV_EXAMPLE_MENU_ITEM2:
+	case ID_MAIN_RBMENU_DEV_UNIT_TEST_BTN:
+	{
+		pCmdUI->Enable(TRUE);
+	}
+	break;
+	default:
+		break;
+	}
+}

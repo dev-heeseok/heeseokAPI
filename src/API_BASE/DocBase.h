@@ -7,6 +7,10 @@ public:
 	virtual ~CDocBase();
 
 public:
+	virtual BOOL OnNewDocument() override;
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName) override;
+	virtual BOOL OnSaveDocument(LPCTSTR lpszPathName) override;
+	virtual void OnCloseDocument() override;
 
 };
 

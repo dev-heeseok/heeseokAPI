@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "ViewBase.h"
+#include "NotifyObserver.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,10 +7,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CViewBase::CViewBase()
+CNotifyObserver::CNotifyObserver()
 {
 }
 
-CViewBase::~CViewBase()
+CNotifyObserver::~CNotifyObserver()
 {
 }

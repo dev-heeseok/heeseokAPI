@@ -26,6 +26,9 @@
     <Filter Include="MAIN_FRAME\Category\Interface">
       <UniqueIdentifier>{e521955d-a9a7-4267-bf91-196e527bbc74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PRODUCT">
+      <UniqueIdentifier>{9c03d3f1-9dc6-410d-87a7-62f95a98b167}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -66,6 +69,9 @@
     </ClInclude>
     <ClInclude Include="MainCategoryBase.h">
       <Filter>MAIN_FRAME\Category\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>PRODUCT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

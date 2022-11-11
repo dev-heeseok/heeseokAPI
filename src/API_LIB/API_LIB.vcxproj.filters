@@ -11,6 +11,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="LIB_NOTIFY">
+      <UniqueIdentifier>{906afbc5-c4a3-479c-9882-f3f0e1c01d1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API_LIB.cpp">
@@ -21,6 +24,15 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>__meta__</Filter>
+    </ClCompile>
+    <ClCompile Include="NotifyObserver.cpp">
+      <Filter>LIB_NOTIFY</Filter>
+    </ClCompile>
+    <ClCompile Include="NotifySubject.cpp">
+      <Filter>LIB_NOTIFY</Filter>
+    </ClCompile>
+    <ClCompile Include="NotifyDefine.cpp">
+      <Filter>LIB_NOTIFY</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +55,15 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>__resource__</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifyObserver.h">
+      <Filter>LIB_NOTIFY</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifySubject.h">
+      <Filter>LIB_NOTIFY</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifyDefine.h">
+      <Filter>LIB_NOTIFY</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
