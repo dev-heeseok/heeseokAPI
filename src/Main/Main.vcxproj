@@ -222,6 +222,7 @@
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ProductDocManager.h" />
     <ClInclude Include="ProductInfoImpl.h" />
     <ClInclude Include="Version.h" />
     <ClInclude Include="Resource.h" />
@@ -243,6 +244,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ProductDocManager.cpp" />
     <ClCompile Include="ProductInfoImpl.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -23,6 +23,6 @@
 #define COPYRIGHT			"dev-heeseok. All rights reserved."
 
 #define FILE_EXT			".heeseok"
-#define FILE_FILTER			"|HEESEOK API(*.heeseok)|*.heeseok|All Files (*.*)|*.*||"
+#define FILE_FILTER			"HEESEOK API(*.heeseok)|*.heeseok|All Files(*.*)|*.*||"
 
 #endif // !_VERSION_H_

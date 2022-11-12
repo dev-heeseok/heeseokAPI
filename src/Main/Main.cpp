@@ -22,6 +22,9 @@
 #include "ChildFrm.h"
 #include "MainDoc.h"
 #include "MainView.h"
+#include "ProductDocManager.h"
+
+#include "../API_BASE/ProductInfo.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -108,7 +111,9 @@ BOOL CMainApp::InitInstance()
 	// 해당 설정이 저장된 레지스트리 키를 변경하십시오.
 	// TODO: 이 문자열을 회사 또는 조직의 이름과 같은
 	// 적절한 내용으로 수정해야 합니다.
-	SetRegistryKey(_T("로컬 애플리케이션 마법사에서 생성된 애플리케이션"));
+
+	CString strProductName = IProductInfo::Instance().ProductName();
+	SetRegistryKey(strProductName);
 	LoadStdProfileSettings(4);  // MRU를 포함하여 표준 INI 파일 옵션을 로드합니다.
 
 
@@ -122,6 +127,9 @@ BOOL CMainApp::InitInstance()
 	ttParams.m_bVislManagerTheme = TRUE;
 	theApp.GetTooltipManager()->SetTooltipParams(AFX_TOOLTIP_TYPE_ALL,
 		RUNTIME_CLASS(CMFCToolTipCtrl), &ttParams);
+
+	// TODO. Product Document Manager
+	m_pDocManager = new CProductDocManager;
 
 	// 애플리케이션의 문서 템플릿을 등록합니다.  문서 템플릿은
 	//  문서, 프레임 창 및 뷰 사이의 연결 역할을 합니다.
