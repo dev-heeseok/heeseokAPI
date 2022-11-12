@@ -14,6 +14,9 @@
     <Filter Include="BASE_INTERFACE">
       <UniqueIdentifier>{8f67a7ce-e6cf-431e-a02b-acdb2f0531ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BASE_PRODUCT">
+      <UniqueIdentifier>{2c9d7033-97a5-42e1-88fd-a27cd8ba8057}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -30,6 +33,9 @@
     </ClCompile>
     <ClCompile Include="ViewBase.cpp">
       <Filter>BASE_INTERFACE</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductInfo.cpp">
+      <Filter>BASE_PRODUCT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="ViewBase.h">
       <Filter>BASE_INTERFACE</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductInfo.h">
+      <Filter>BASE_PRODUCT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

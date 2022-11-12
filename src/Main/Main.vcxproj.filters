@@ -73,6 +73,9 @@
     <ClInclude Include="Version.h">
       <Filter>PRODUCT</Filter>
     </ClInclude>
+    <ClInclude Include="ProductInfoImpl.h">
+      <Filter>PRODUCT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="MainCategoryBase.cpp">
       <Filter>MAIN_FRAME\Category\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductInfoImpl.cpp">
+      <Filter>PRODUCT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
