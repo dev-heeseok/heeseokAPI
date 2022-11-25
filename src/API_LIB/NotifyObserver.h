@@ -1,6 +1,6 @@
 #pragma once
 
-class CNotifyObserver
+class AFX_EXT_CLASS CNotifyObserver
 {
 public:
 	CNotifyObserver();

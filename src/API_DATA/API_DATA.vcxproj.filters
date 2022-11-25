@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="__meta__">
+      <UniqueIdentifier>{6f29e099-8436-4c0c-95ec-6c41231036ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__resource__">
+      <UniqueIdentifier>{ed061fc3-9438-46f3-bed7-5aa3037b5435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__resource_file__">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DATA_MDB">
+      <UniqueIdentifier>{5053f6ee-1366-4464-8adb-12bdb7654df0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_MDB\MESH_SET">
+      <UniqueIdentifier>{bdad9430-81c1-42d0-883f-81c7c47f8807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_MDB\MESH_SET\NODE">
+      <UniqueIdentifier>{49e77bec-bc5f-427d-9d54-b83a032d7f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_MDB\MESH_SET\MESH">
+      <UniqueIdentifier>{064af050-5eaa-421f-bbf6-5ecf7c42f8fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_MDB\MESH_SET\ELEMENT">
+      <UniqueIdentifier>{606e1a0f-405c-4006-9398-69732c0c8d9f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="API_DATA.cpp">
+      <Filter>__meta__</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>__meta__</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>__meta__</Filter>
+    </ClCompile>
+    <ClCompile Include="MElement.cpp">
+      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    </ClCompile>
+    <ClCompile Include="MMesh.cpp">
+      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    </ClCompile>
+    <ClCompile Include="MNode.cpp">
+      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    </ClCompile>
+    <ClCompile Include="MSegmentElement.cpp">
+      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    </ClCompile>
+    <ClCompile Include="MSegmentNode.cpp">
+      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    </ClCompile>
+    <ClCompile Include="MSegmentMesh.cpp">
+      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\API_DATA.rc2">
+      <Filter>__resource__</Filter>
+    </None>
+    <None Include="API_DATA.def">
+      <Filter>__meta__</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__meta__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__resource__</Filter>
+    </ClInclude>
+    <ClInclude Include="MElement.h">
+      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    </ClInclude>
+    <ClInclude Include="MMesh.h">
+      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    </ClInclude>
+    <ClInclude Include="MNode.h">
+      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    </ClInclude>
+    <ClInclude Include="MSegmentNode.h">
+      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    </ClInclude>
+    <ClInclude Include="MSegmentElement.h">
+      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    </ClInclude>
+    <ClInclude Include="MSegmentMesh.h">
+      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="API_DATA.rc">
+      <Filter>__resource__</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

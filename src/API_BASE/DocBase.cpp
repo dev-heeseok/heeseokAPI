@@ -35,3 +35,8 @@ void CDocBase::OnCloseDocument()
 	CDocument::OnCloseDocument();
 
 }
+
+int CDocBase::Notify(UINT /*uiMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/)
+{
+	return 0;
+}

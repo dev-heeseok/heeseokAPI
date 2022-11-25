@@ -18,7 +18,10 @@ public:
 	virtual BOOL OnSaveDocument(LPCTSTR lpszPathName) override;
 	virtual void OnCloseDocument() override;
 
+	[[deprecated]]
 	virtual void Serialize(CArchive& ar) override;
+
+	virtual int Notify(UINT uiMsg, WPARAM wParam, LPARAM lParam) override;
 
 #ifdef SHARED_HANDLERS
 	virtual void InitializeSearchContent();

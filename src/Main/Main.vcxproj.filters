@@ -29,6 +29,9 @@
     <Filter Include="PRODUCT">
       <UniqueIdentifier>{9c03d3f1-9dc6-410d-87a7-62f95a98b167}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MAIN_DB">
+      <UniqueIdentifier>{93769805-9252-4db4-8173-30a5a16556b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -79,6 +82,12 @@
     <ClInclude Include="ProductDocManager.h">
       <Filter>PRODUCT</Filter>
     </ClInclude>
+    <ClInclude Include="ProductSerialize.h">
+      <Filter>PRODUCT</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBase.h">
+      <Filter>MAIN_DB</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -117,15 +126,21 @@
     <ClCompile Include="ProductDocManager.cpp">
       <Filter>PRODUCT</Filter>
     </ClCompile>
+    <ClCompile Include="ProductSerialize.cpp">
+      <Filter>PRODUCT</Filter>
+    </ClCompile>
+    <ClCompile Include="DataBase.cpp">
+      <Filter>MAIN_DB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Main.reg" />
     <None Include="res\ribbon.mfcribbon-ms">
       <Filter>__resource_file__</Filter>
     </None>
     <None Include="res\Main.rc2">
       <Filter>__resource__</Filter>
     </None>
+    <None Include="Main.reg" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\nav_large.bmp">

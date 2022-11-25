@@ -7,6 +7,7 @@
 #endif
 
 #include "MainDoc.h"
+#include "ProductSerialize.h"
 
 #include <propkey.h>
 
@@ -51,37 +52,41 @@ BOOL CMainDoc::OnNewDocument()
 	if (!CDocBase::OnNewDocument())
 		return FALSE;
 
-	// TODO: 여기에 재초기화 코드를 추가합니다.
-	// SDI 문서는 이 문서를 다시 사용합니다.
-
-	return TRUE;
+	return CProductSerialize::Instance().OnProductNew(this);
 }
 
 BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
 {
-	return CDocBase::OnOpenDocument(lpszPathName);
+	if(!CDocBase::OnOpenDocument(lpszPathName))
+		return FALSE;
+
+	return CProductSerialize::Instance().OnProductOpen(this, lpszPathName);
 }
 
 BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
+	if (!CProductSerialize::Instance().OnProductSave(this, lpszPathName))
+		return FALSE;
+
 	return CDocBase::OnSaveDocument(lpszPathName);
 }
 
 void CMainDoc::OnCloseDocument()
 {
+	if (!CProductSerialize::Instance().OnProductClose(this))
+		return;
+
 	CDocBase::OnCloseDocument();
 }
 
 void CMainDoc::Serialize(CArchive& ar)
 {
-	if (ar.IsStoring())
-	{
-		// TODO: 여기에 저장 코드를 추가합니다.
-	}
-	else
-	{
-		// TODO: 여기에 로딩 코드를 추가합니다.
-	}
+	CDocBase::Serialize(ar);
+}
+
+int CMainDoc::Notify(UINT uiMsg, WPARAM wParam, LPARAM lParam)
+{
+	return CDocBase::Notify(uiMsg, wParam, lParam);
 }
 
 #ifdef SHARED_HANDLERS

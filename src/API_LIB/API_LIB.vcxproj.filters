@@ -14,6 +14,9 @@
     <Filter Include="LIB_NOTIFY">
       <UniqueIdentifier>{906afbc5-c4a3-479c-9882-f3f0e1c01d1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LIB_UTILITY">
+      <UniqueIdentifier>{25f175f7-f960-435b-a405-b2492f954f73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API_LIB.cpp">
@@ -34,6 +37,10 @@
     <ClCompile Include="NotifyDefine.cpp">
       <Filter>LIB_NOTIFY</Filter>
     </ClCompile>
+    <ClCompile Include="StandardLibrary.cpp">
+      <Filter>LIB_UTILITY</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardFuncLibrary.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\API_LIB.rc2">
@@ -65,6 +72,10 @@
     <ClInclude Include="NotifyDefine.h">
       <Filter>LIB_NOTIFY</Filter>
     </ClInclude>
+    <ClInclude Include="StandardLibrary.h">
+      <Filter>LIB_UTILITY</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardFuncLibrary.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="API_LIB.rc">
