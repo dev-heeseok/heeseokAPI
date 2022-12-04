@@ -226,11 +226,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="MDataBaseDefine.cpp" />
+    <ClCompile Include="DatabaseDefine.cpp" />
     <ClCompile Include="MTableSpace.cpp" />
     <ClCompile Include="MBlock.cpp" />
-    <ClCompile Include="MSegmentBase.cpp" />
+    <ClCompile Include="MSchema.cpp" />
     <ClCompile Include="MTransaction.cpp" />
+    <ClCompile Include="NotifyDefine.cpp" />
+    <ClCompile Include="NotifySubject.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -243,30 +245,27 @@
     <None Include="res\API_CORE.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AddionalProject.h" />
+    <ClInclude Include="AddionalDatabase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MArray.hpp" />
-    <ClInclude Include="MDataBaseDefine.h" />
-    <ClInclude Include="MHashMap.hpp" />
+    <ClInclude Include="DatabaseDefine.h" />
+    <ClInclude Include="MSegment.hpp" />
     <ClInclude Include="MMatrix.hpp" />
     <ClInclude Include="MString.hpp" />
     <ClInclude Include="MTableSpace.h" />
     <ClInclude Include="MBlock.h" />
-    <ClInclude Include="MSegment.hpp" />
-    <ClInclude Include="MSegmentBase.h" />
+    <ClInclude Include="MSchemaBase.hpp" />
+    <ClInclude Include="MSchema.h" />
     <ClInclude Include="MTransaction.h" />
     <ClInclude Include="MVector.hpp" />
+    <ClInclude Include="NotifyDefine.h" />
+    <ClInclude Include="NotifySubject.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="API_CORE.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
-      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

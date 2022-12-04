@@ -229,9 +229,11 @@
     <ClCompile Include="MElement.cpp" />
     <ClCompile Include="MMesh.cpp" />
     <ClCompile Include="MNode.cpp" />
-    <ClCompile Include="MSegmentElement.cpp" />
-    <ClCompile Include="MSegmentMesh.cpp" />
-    <ClCompile Include="MSegmentNode.cpp" />
+    <ClCompile Include="MProjectSetting.cpp" />
+    <ClCompile Include="MProjectSettingSchema.cpp" />
+    <ClCompile Include="MSchemaElement.cpp" />
+    <ClCompile Include="MSchemaMesh.cpp" />
+    <ClCompile Include="MNodeSchema.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -248,9 +250,12 @@
     <ClInclude Include="MElement.h" />
     <ClInclude Include="MMesh.h" />
     <ClInclude Include="MNode.h" />
-    <ClInclude Include="MSegmentElement.h" />
-    <ClInclude Include="MSegmentMesh.h" />
-    <ClInclude Include="MSegmentNode.h" />
+    <ClInclude Include="MProjectSetting.h" />
+    <ClInclude Include="MProjectSettingSchema.h" />
+    <ClInclude Include="MRelationalDatabaseType.h" />
+    <ClInclude Include="MSchemaElement.h" />
+    <ClInclude Include="MSchemaMesh.h" />
+    <ClInclude Include="MNodeSchema.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />

@@ -1,22 +1,19 @@
 #pragma once
 
-#include "MDataBaseDefine.h"
-#include <vector>
+#include "AddionalDatabase.h"
 
 class MBlock;
 class MTableSpace;
-class AFX_EXT_CLASS MSegmentBase
+class AFX_EXT_CLASS MSchema
 {
 public:
-	MSegmentBase(MTableSpace* pTableSpace, int nType);
-	virtual ~MSegmentBase();
+	MSchema(MTableSpace* pTableSpace, UINT uiType);
+	virtual ~MSchema();
 
 public:
-	virtual int GetDataType() { return m_nDataType; }
-	virtual int GetFlag() { return m_nFlag; }
-	virtual void SetFlag(int nFlag) { m_nFlag = nFlag; }
+	virtual BOOL ProcessRelation() = 0;
+	virtual void LazyDelete() = 0;
 
-public:
 	virtual BOOL IsEmpty() const = 0;
 	virtual int GetSize() const = 0;
 	virtual int GetKeyList(OUT std::vector<MKEY>& aKey) = 0;
@@ -26,9 +23,14 @@ public:
 	virtual MITERATOR InsertNU(MBlock* pData) = 0;
 	virtual BOOL SetAtNU(MITERATOR itr, MBlock* pData) = 0;
 
+public:
+	UINT GetType() { return m_uiType; }
+	UINT GetFlag() { return m_uiFlag; }
+	void SetFlag(UINT uiFlag) { m_uiFlag = uiFlag; }
+
 protected:
 	MTableSpace* m_pTableSpace;
-	int m_nDataType;
-	int m_nFlag;
+	UINT m_uiType;
+	UINT m_uiFlag; // SchemaFlag
 
 };

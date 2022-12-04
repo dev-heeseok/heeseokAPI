@@ -1,36 +1,48 @@
 #pragma once
 
-#include <vector>
-#include <memory>
-#include <unordered_map>
+#include "NotifySubject.h"
 
-class MSegmentBase;
-class AFX_EXT_CLASS MTableSpace
+class MSchema;
+class MTransaction;
+class AFX_EXT_CLASS MTableSpace : public CNotifySubject
 {
-	using SEGMENT_PTR = std::shared_ptr<MSegmentBase>;
-	using SEGMENT_LIST = std::vector<SEGMENT_PTR>;
-	using SEQUENCE_MAP = std::unordered_map<int, size_t>; // TODO. type to index
+	friend MTransaction;
+
+	using PTR_SCHEMA = std::shared_ptr<MSchema>;
+	using VEC_SCHEMA = std::vector<PTR_SCHEMA>;
+	using MAP_SCHEMA = std::unordered_map<UINT, int>; // type to schema index
+	using VEC_NOTIFY = std::vector<tagNotification>;
 
 public:
 	MTableSpace();
 	virtual ~MTableSpace();
 
-public:
-	virtual void SetSegment(int nType, MSegmentBase* pSegment);
-	virtual void Build();
-
 protected:
-	virtual void ComposeList() {}
-	virtual void PreComposeList() {}
-	virtual void LazyComposeList() {}
+	virtual void PrebuildSchema() = 0;
+	virtual void PostbuildSchema() = 0;
+	virtual void BuildSchema() = 0;
 
 public:
-	int GetCount();
-	MSegmentBase* GetSegment(int nType);
-	MSegmentBase* GetSegmentByIndex(int nIndex);
+	BOOL IsTR() { return m_bTR; }
+	void PushNotify(const tagNotification& data);
+
+	void BindingSchema();
+	void AppendSchema(MSchema* pSchema);
+
+	int GetSchemaCount();
+	MSchema* GetSchemaByType(UINT uiType);
+	MSchema* GetSchemaByIndx(int nIndex);
+	
+protected:
+	BOOL BeginTR(CString strName);
+	BOOL CommitTR();
+	BOOL RollbackTR();
 
 protected:
-	SEGMENT_LIST m_segment;
-	SEQUENCE_MAP m_sequence;
+	BOOL m_bTR;
+
+	VEC_NOTIFY m_aNotify;
+	VEC_SCHEMA m_aSchema;
+	MAP_SCHEMA m_mSchema;
 
 };

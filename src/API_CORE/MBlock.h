@@ -1,12 +1,8 @@
 #pragma once
 
-#include "AddionalProject.h"
-
-//#pragma pack(push, 4)
+#include "AddionalDatabase.h"
 
 class MTableSpace;
-class MSegment;
-
 class AFX_EXT_CLASS MBlock
 {
 public:
@@ -14,12 +10,11 @@ public:
 	virtual ~MBlock();
 
 public:
-	virtual int GetDataType() = 0;
-	virtual void Initialize() = 0;
-	
-	virtual BOOL ChmodRead(MSegment* pSegment) = 0;
-	virtual BOOL ChmodWrite(MSegment* pSegment) = 0;
+	virtual MKEY GetPrimaryKey() const = 0;
+	virtual void SetPrimaryKey(MKEY key) = 0;
+
+	virtual BOOL ChmodFile(MTableSpace* pTableSpace) = 0;
+	virtual BOOL ChmodMomory(MTableSpace* pTableSpace) = 0;
+
 
 };
-
-//#pragma pack(pop)

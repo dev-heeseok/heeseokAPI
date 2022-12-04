@@ -226,9 +226,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="NotifyDefine.cpp" />
-    <ClCompile Include="NotifyObserver.cpp" />
-    <ClCompile Include="NotifySubject.cpp" />
+    <ClCompile Include="MathLibrary.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -237,20 +235,23 @@
     </ClCompile>
     <ClCompile Include="StandardFuncLibrary.cpp" />
     <ClCompile Include="StandardLibrary.cpp" />
+    <ClCompile Include="StringLibrary.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="API_LIB.def" />
     <None Include="res\API_LIB.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdditionalProject.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="NotifyDefine.h" />
-    <ClInclude Include="NotifyObserver.h" />
-    <ClInclude Include="NotifySubject.h" />
+    <ClInclude Include="IObserver.h" />
+    <ClInclude Include="ISubject.h" />
+    <ClInclude Include="MathLibrary.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="StandardFuncLibrary.h" />
     <ClInclude Include="StandardLibrary.h" />
+    <ClInclude Include="StringLibrary.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>

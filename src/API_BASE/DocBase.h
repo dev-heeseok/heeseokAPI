@@ -1,8 +1,9 @@
 #pragma once
 
-#include "../API_LIB/NotifyObserver.h"
+#include "../API_LIB/IObserver.h"
 
-class AFX_EXT_CLASS CDocBase : public CDocument, CNotifyObserver
+class MRelationalDatabase;
+class AFX_EXT_CLASS CDocBase : public CDocument, IObserver
 {
 public:
 	CDocBase();
@@ -15,7 +16,10 @@ public:
 	virtual void OnCloseDocument() override;
 
 protected:
-	virtual int Notify(UINT uiMsg, WPARAM wParam, LPARAM lParam) override;
+	virtual int Update(UINT uiMsg, WPARAM wParam, LPARAM lParam) override;
+
+protected:
+	std::shared_ptr<MRelationalDatabase> m_pRDBMS;
 
 };
 

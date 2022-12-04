@@ -11,19 +11,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="DATA_MDB">
+    <Filter Include="DATA_RDBMS">
       <UniqueIdentifier>{5053f6ee-1366-4464-8adb-12bdb7654df0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DATA_MDB\MESH_SET">
+    <Filter Include="DATA_RDBMS\ProjectSetting">
+      <UniqueIdentifier>{c2367ddc-ffcc-4d6f-a419-1c9508cebecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_RDBMS\Mesh">
       <UniqueIdentifier>{bdad9430-81c1-42d0-883f-81c7c47f8807}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DATA_MDB\MESH_SET\NODE">
+    <Filter Include="DATA_RDBMS\Mesh\NODE">
       <UniqueIdentifier>{49e77bec-bc5f-427d-9d54-b83a032d7f9f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DATA_MDB\MESH_SET\MESH">
+    <Filter Include="DATA_RDBMS\Mesh\MESH">
       <UniqueIdentifier>{064af050-5eaa-421f-bbf6-5ecf7c42f8fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DATA_MDB\MESH_SET\ELEMENT">
+    <Filter Include="DATA_RDBMS\Mesh\ELEMENT">
       <UniqueIdentifier>{606e1a0f-405c-4006-9398-69732c0c8d9f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -38,22 +41,28 @@
       <Filter>__meta__</Filter>
     </ClCompile>
     <ClCompile Include="MElement.cpp">
-      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+      <Filter>DATA_RDBMS\Mesh\ELEMENT</Filter>
     </ClCompile>
     <ClCompile Include="MMesh.cpp">
-      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+      <Filter>DATA_RDBMS\Mesh\MESH</Filter>
     </ClCompile>
     <ClCompile Include="MNode.cpp">
-      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+      <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClCompile>
-    <ClCompile Include="MSegmentElement.cpp">
-      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    <ClCompile Include="MSchemaElement.cpp">
+      <Filter>DATA_RDBMS\Mesh\ELEMENT</Filter>
     </ClCompile>
-    <ClCompile Include="MSegmentNode.cpp">
-      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    <ClCompile Include="MNodeSchema.cpp">
+      <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClCompile>
-    <ClCompile Include="MSegmentMesh.cpp">
-      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    <ClCompile Include="MSchemaMesh.cpp">
+      <Filter>DATA_RDBMS\Mesh\MESH</Filter>
+    </ClCompile>
+    <ClCompile Include="MProjectSetting.cpp">
+      <Filter>DATA_RDBMS\ProjectSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="MProjectSettingSchema.cpp">
+      <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,22 +87,31 @@
       <Filter>__resource__</Filter>
     </ClInclude>
     <ClInclude Include="MElement.h">
-      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+      <Filter>DATA_RDBMS\Mesh\ELEMENT</Filter>
     </ClInclude>
     <ClInclude Include="MMesh.h">
-      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+      <Filter>DATA_RDBMS\Mesh\MESH</Filter>
     </ClInclude>
     <ClInclude Include="MNode.h">
-      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+      <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClInclude>
-    <ClInclude Include="MSegmentNode.h">
-      <Filter>DATA_MDB\MESH_SET\NODE</Filter>
+    <ClInclude Include="MNodeSchema.h">
+      <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClInclude>
-    <ClInclude Include="MSegmentElement.h">
-      <Filter>DATA_MDB\MESH_SET\ELEMENT</Filter>
+    <ClInclude Include="MSchemaElement.h">
+      <Filter>DATA_RDBMS\Mesh\ELEMENT</Filter>
     </ClInclude>
-    <ClInclude Include="MSegmentMesh.h">
-      <Filter>DATA_MDB\MESH_SET\MESH</Filter>
+    <ClInclude Include="MSchemaMesh.h">
+      <Filter>DATA_RDBMS\Mesh\MESH</Filter>
+    </ClInclude>
+    <ClInclude Include="MRelationalDatabaseType.h">
+      <Filter>DATA_RDBMS</Filter>
+    </ClInclude>
+    <ClInclude Include="MProjectSetting.h">
+      <Filter>DATA_RDBMS\ProjectSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="MProjectSettingSchema.h">
+      <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

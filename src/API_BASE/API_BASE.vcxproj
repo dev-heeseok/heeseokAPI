@@ -212,6 +212,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="API_BASE.cpp" />
+    <ClCompile Include="MRelationalDatabase.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -241,6 +242,7 @@
     <None Include="res\API_BASE.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MRelationalDatabase.h" />
     <ClInclude Include="DocBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
@@ -253,8 +255,11 @@
     <ResourceCompile Include="API_BASE.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
-      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
+    <ProjectReference Include="..\API_CORE\API_CORE.vcxproj">
+      <Project>{80d37cf3-a0cd-4830-8ecb-9e2f124ba6d8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_DATA\API_DATA.vcxproj">
+      <Project>{51e3cc27-f8c0-4e93-864f-8ce3aacf86a5}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

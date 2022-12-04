@@ -84,9 +84,9 @@ void CMainDoc::Serialize(CArchive& ar)
 	CDocBase::Serialize(ar);
 }
 
-int CMainDoc::Notify(UINT uiMsg, WPARAM wParam, LPARAM lParam)
+int CMainDoc::Update(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 {
-	return CDocBase::Notify(uiMsg, wParam, lParam);
+	return CDocBase::Update(uiMsg, wParam, lParam);
 }
 
 #ifdef SHARED_HANDLERS

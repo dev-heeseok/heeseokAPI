@@ -11,11 +11,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="LIB_NOTIFY">
-      <UniqueIdentifier>{906afbc5-c4a3-479c-9882-f3f0e1c01d1e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="LIB_UTILITY">
       <UniqueIdentifier>{25f175f7-f960-435b-a405-b2492f954f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LIB_UTILITY\Observer">
+      <UniqueIdentifier>{d72daebc-e552-4843-8a85-4231baff0b0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LIB_UTILITY\String">
+      <UniqueIdentifier>{d74f37a9-17ee-4b74-8c49-a7cf24ea2021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LIB_UTILITY\Standard">
+      <UniqueIdentifier>{d5a99c0b-6978-4bcb-9cc2-cbb6f70b5f95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LIB_DEFINE">
+      <UniqueIdentifier>{50dca30d-f9af-43a4-80bd-012715fda5d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LIB_UTILITY\Math">
+      <UniqueIdentifier>{1cfa8b75-375b-48f0-881b-40ca1b5d07a6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,19 +40,18 @@
     <ClCompile Include="pch.cpp">
       <Filter>__meta__</Filter>
     </ClCompile>
-    <ClCompile Include="NotifyObserver.cpp">
-      <Filter>LIB_NOTIFY</Filter>
-    </ClCompile>
-    <ClCompile Include="NotifySubject.cpp">
-      <Filter>LIB_NOTIFY</Filter>
-    </ClCompile>
-    <ClCompile Include="NotifyDefine.cpp">
-      <Filter>LIB_NOTIFY</Filter>
+    <ClCompile Include="StandardFuncLibrary.cpp">
+      <Filter>LIB_UTILITY\Standard</Filter>
     </ClCompile>
     <ClCompile Include="StandardLibrary.cpp">
-      <Filter>LIB_UTILITY</Filter>
+      <Filter>LIB_UTILITY\Standard</Filter>
     </ClCompile>
-    <ClCompile Include="StandardFuncLibrary.cpp" />
+    <ClCompile Include="StringLibrary.cpp">
+      <Filter>LIB_UTILITY\String</Filter>
+    </ClCompile>
+    <ClCompile Include="MathLibrary.cpp">
+      <Filter>LIB_UTILITY\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\API_LIB.rc2">
@@ -63,19 +74,27 @@
     <ClInclude Include="Resource.h">
       <Filter>__resource__</Filter>
     </ClInclude>
-    <ClInclude Include="NotifyObserver.h">
-      <Filter>LIB_NOTIFY</Filter>
-    </ClInclude>
-    <ClInclude Include="NotifySubject.h">
-      <Filter>LIB_NOTIFY</Filter>
-    </ClInclude>
-    <ClInclude Include="NotifyDefine.h">
-      <Filter>LIB_NOTIFY</Filter>
+    <ClInclude Include="StandardFuncLibrary.h">
+      <Filter>LIB_UTILITY\Standard</Filter>
     </ClInclude>
     <ClInclude Include="StandardLibrary.h">
-      <Filter>LIB_UTILITY</Filter>
+      <Filter>LIB_UTILITY\Standard</Filter>
     </ClInclude>
-    <ClInclude Include="StandardFuncLibrary.h" />
+    <ClInclude Include="IObserver.h">
+      <Filter>LIB_UTILITY\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="ISubject.h">
+      <Filter>LIB_UTILITY\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="StringLibrary.h">
+      <Filter>LIB_UTILITY\String</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditionalProject.h">
+      <Filter>LIB_DEFINE</Filter>
+    </ClInclude>
+    <ClInclude Include="MathLibrary.h">
+      <Filter>LIB_UTILITY\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="API_LIB.rc">

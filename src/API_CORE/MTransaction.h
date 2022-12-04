@@ -1,6 +1,10 @@
 #pragma once
 
-class MTransaction
+class AFX_EXT_CLASS MTransaction final
 {
+public:
+	MTransaction();
+	~MTransaction();
+
 };
 

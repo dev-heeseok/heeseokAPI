@@ -7,7 +7,7 @@ struct tagString
 
 	tagString()
 	{
-		str[0] = nullptr;
+		str[0] = NULL;
 	}
 	tagString(const CString& cstr)
 	{
@@ -19,12 +19,12 @@ struct tagString
 	}
 	tagString& operator=(const CString cstr)
 	{
-		_tcsncpy(str, N_SIZE, (LPCTSTR)cstr, _tcslen(cstr));
+		_tcsncpy_s(str, N_SIZE, (LPCTSTR)cstr, _tcslen(cstr));
 		return *this;
 	}
 	tagString& operator=(LPCTSTR lpcstr)
 	{
-		_tcsncpy(str, N_SIZE, (LPCTSTR)lpcstr, _tcslen(lpcstr));
+		_tcsncpy_s(str, N_SIZE, (LPCTSTR)lpcstr, _tcslen(lpcstr));
 		return *this;
 	}
 	bool operator==(const tagString& tstr) const

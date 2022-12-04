@@ -1,6 +1,7 @@
 #pragma once
 
-#include "MDataBaseDefine.h"
+#include "DatabaseDefine.h"
+
 #include "MString.hpp"
 #include "MVector.hpp"
 #include "MMatrix.hpp"

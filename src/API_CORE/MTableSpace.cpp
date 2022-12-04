@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "MTableSpace.h"
-#include "MSegmentBase.h"
+#include "MSchema.h"
+
+#include "../API_LIB/StandardFuncLibrary.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -8,7 +10,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+using namespace util;
+
 MTableSpace::MTableSpace()
+	: m_bTR(FALSE)
 {
 }
 
@@ -16,57 +21,81 @@ MTableSpace::~MTableSpace()
 {
 }
 
-void MTableSpace::SetSegment(int nType, MSegmentBase* pSegment)
+void MTableSpace::PushNotify(const tagNotification& data)
 {
-	auto itr = m_sequence.find(nType);
-	if (itr != m_sequence.cend())
-	{
-		ASSERT(FALSE); // TODO. duplicated type
-		m_segment.erase(m_segment.begin() + itr->second);
-		m_sequence.erase(itr);
-	}
-
-	size_t index = m_segment.size();
-
-	m_sequence.insert({ nType, index });
-	m_segment.push_back(std::shared_ptr<MSegmentBase>(pSegment));
+	m_aNotify.push_back(data);
 }
 
-void MTableSpace::Build()
+void MTableSpace::BindingSchema()
 {
-	PreComposeList();
+	PrebuildSchema();
 
-	ComposeList();
+	BuildSchema();
 
-	LazyComposeList();
+	PostbuildSchema();
 }
 
-int MTableSpace::GetCount()
+void MTableSpace::AppendSchema(MSchema* pSchema)
 {
-	return static_cast<int>(m_segment.size());
+	if (pSchema == nullptr)
+		return;
+
+	UINT uiType = pSchema->GetType();
+	int nIndex = static_cast<int>(m_aSchema.size());
+
+	m_mSchema.insert({ uiType, nIndex });
+	m_aSchema.push_back(PTR_SCHEMA(pSchema));
 }
 
-MSegmentBase* MTableSpace::GetSegment(int nType)
+int MTableSpace::GetSchemaCount()
 {
-	auto itr = m_sequence.find(nType);
-	if (itr == m_sequence.cend())
-	{
-		ASSERT(FALSE);
-		return nullptr;
-	}
-
-	size_t index = itr->second;
-
-	return m_segment[index].get();
+	return static_cast<int>(m_aSchema.size());
 }
 
-MSegmentBase* MTableSpace::GetSegmentByIndex(int nIndex)
+MSchema* MTableSpace::GetSchemaByType(UINT uiType)
 {
-	if (nIndex >= GetCount())
-	{
-		ASSERT(FALSE);
-		return nullptr;
-	}
+	auto itr = m_mSchema.find(uiType);
+	return itr != m_mSchema.end() ? m_aSchema[itr->second].get() : nullptr;
+}
 
-	return m_segment[nIndex].get();
+MSchema* MTableSpace::GetSchemaByIndx(int nIndex)
+{
+	int nCount = GetSchemaCount();
+	return nIndex < nCount ? m_aSchema[nIndex].get() : nullptr;
+}
+
+BOOL MTableSpace::BeginTR(CString strName)
+{
+	for (auto pSchema : m_aSchema)
+		pSchema->SetFlag(0);
+
+	m_aNotify.clear();
+	m_bTR = TRUE;
+
+	return TRUE;
+}
+
+BOOL MTableSpace::CommitTR()
+{
+	for (auto pSchema : m_aSchema)
+		pSchema->ProcessRelation();
+
+	m_aNotify;
+	Notify(EnumIndex(NMessage::kUpdateDB), 0, 0);
+
+	for (auto pSchema : m_aSchema)
+		pSchema->LazyDelete();
+
+	m_aNotify.clear();
+	m_bTR = FALSE;
+
+	return TRUE;
+}
+
+BOOL MTableSpace::RollbackTR()
+{
+	m_aNotify.clear();
+	m_bTR = FALSE;
+
+	return FALSE;
 }

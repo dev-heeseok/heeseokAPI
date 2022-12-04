@@ -11,20 +11,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="CORE_SEGMENT">
+    <Filter Include="CORE_NOTIFY">
+      <UniqueIdentifier>{589bdfd2-fdb3-437f-81f1-ef9e8616f4cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CORE_RDBMS">
+      <UniqueIdentifier>{eff113ba-344d-4401-8e36-d07da45c8ef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CORE_RDBMS\MSchema">
       <UniqueIdentifier>{7e055eb8-4d33-437b-b82c-83ac322eb51f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CORE_TABLE_SPACE">
-      <UniqueIdentifier>{8ccdbbcc-c800-4d78-b80a-b9bc4f6e9020}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CORE_DEFINE">
-      <UniqueIdentifier>{57dd8ecf-48f2-4c54-86e8-75186ff465a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CORE_BLOCK">
+    <Filter Include="CORE_RDBMS\MBlock">
       <UniqueIdentifier>{8f50326b-b3e8-4d89-81cd-0a65d691789e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CORE_DEFINE\LIBRARY">
-      <UniqueIdentifier>{833ea392-c757-4f89-baa9-77e2a813a9bc}</UniqueIdentifier>
+    <Filter Include="CORE_RDBMS\MTableSpace">
+      <UniqueIdentifier>{8ccdbbcc-c800-4d78-b80a-b9bc4f6e9020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CORE_RDBMS\__define__">
+      <UniqueIdentifier>{57dd8ecf-48f2-4c54-86e8-75186ff465a7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,19 +41,25 @@
       <Filter>__meta__</Filter>
     </ClCompile>
     <ClCompile Include="MTableSpace.cpp">
-      <Filter>CORE_TABLE_SPACE</Filter>
+      <Filter>CORE_RDBMS\MTableSpace</Filter>
     </ClCompile>
     <ClCompile Include="MBlock.cpp">
-      <Filter>CORE_BLOCK</Filter>
+      <Filter>CORE_RDBMS\MBlock</Filter>
     </ClCompile>
-    <ClCompile Include="MSegmentBase.cpp">
-      <Filter>CORE_SEGMENT</Filter>
+    <ClCompile Include="MSchema.cpp">
+      <Filter>CORE_RDBMS\MSchema</Filter>
     </ClCompile>
-    <ClCompile Include="MDataBaseDefine.cpp">
-      <Filter>CORE_DEFINE</Filter>
+    <ClCompile Include="DatabaseDefine.cpp">
+      <Filter>CORE_RDBMS\__define__</Filter>
     </ClCompile>
     <ClCompile Include="MTransaction.cpp">
-      <Filter>CORE_SEGMENT</Filter>
+      <Filter>CORE_RDBMS\MSchema</Filter>
+    </ClCompile>
+    <ClCompile Include="NotifySubject.cpp">
+      <Filter>CORE_NOTIFY</Filter>
+    </ClCompile>
+    <ClCompile Include="NotifyDefine.cpp">
+      <Filter>CORE_NOTIFY</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,40 +84,46 @@
       <Filter>__resource__</Filter>
     </ClInclude>
     <ClInclude Include="MTableSpace.h">
-      <Filter>CORE_TABLE_SPACE</Filter>
+      <Filter>CORE_RDBMS\MTableSpace</Filter>
     </ClInclude>
     <ClInclude Include="MBlock.h">
-      <Filter>CORE_BLOCK</Filter>
+      <Filter>CORE_RDBMS\MBlock</Filter>
     </ClInclude>
-    <ClInclude Include="MSegmentBase.h">
-      <Filter>CORE_SEGMENT</Filter>
+    <ClInclude Include="MSchema.h">
+      <Filter>CORE_RDBMS\MSchema</Filter>
     </ClInclude>
-    <ClInclude Include="MSegment.hpp">
-      <Filter>CORE_SEGMENT</Filter>
+    <ClInclude Include="MSchemaBase.hpp">
+      <Filter>CORE_RDBMS\MSchema</Filter>
     </ClInclude>
-    <ClInclude Include="MDataBaseDefine.h">
-      <Filter>CORE_DEFINE</Filter>
+    <ClInclude Include="DatabaseDefine.h">
+      <Filter>CORE_RDBMS\__define__</Filter>
     </ClInclude>
     <ClInclude Include="MTransaction.h">
-      <Filter>CORE_SEGMENT</Filter>
+      <Filter>CORE_RDBMS\MSchema</Filter>
     </ClInclude>
-    <ClInclude Include="MHashMap.hpp">
-      <Filter>CORE_SEGMENT</Filter>
+    <ClInclude Include="MSegment.hpp">
+      <Filter>CORE_RDBMS\MSchema</Filter>
     </ClInclude>
-    <ClInclude Include="MVector.hpp">
-      <Filter>CORE_DEFINE\LIBRARY</Filter>
+    <ClInclude Include="AddionalDatabase.h">
+      <Filter>CORE_RDBMS\__define__</Filter>
     </ClInclude>
     <ClInclude Include="MArray.hpp">
-      <Filter>CORE_DEFINE\LIBRARY</Filter>
-    </ClInclude>
-    <ClInclude Include="MString.hpp">
-      <Filter>CORE_DEFINE\LIBRARY</Filter>
+      <Filter>CORE_RDBMS\__define__</Filter>
     </ClInclude>
     <ClInclude Include="MMatrix.hpp">
-      <Filter>CORE_DEFINE\LIBRARY</Filter>
+      <Filter>CORE_RDBMS\__define__</Filter>
     </ClInclude>
-    <ClInclude Include="AddionalProject.h">
-      <Filter>CORE_DEFINE</Filter>
+    <ClInclude Include="MString.hpp">
+      <Filter>CORE_RDBMS\__define__</Filter>
+    </ClInclude>
+    <ClInclude Include="MVector.hpp">
+      <Filter>CORE_RDBMS\__define__</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifySubject.h">
+      <Filter>CORE_NOTIFY</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifyDefine.h">
+      <Filter>CORE_NOTIFY</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

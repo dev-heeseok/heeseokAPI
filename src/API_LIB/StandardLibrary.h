@@ -1,5 +1,9 @@
 #pragma once
-class StandardLibrary
+
+namespace util
 {
-};
+	class StandardLibrary
+	{
+	};
+}
 

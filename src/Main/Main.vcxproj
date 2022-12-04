@@ -213,7 +213,6 @@
   <ItemGroup>
     <ClInclude Include="calendarbar.h" />
     <ClInclude Include="ChildFrm.h" />
-    <ClInclude Include="DataBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainCategoryBase.h" />
@@ -233,7 +232,6 @@
   <ItemGroup>
     <ClCompile Include="calendarbar.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
-    <ClCompile Include="DataBase.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainCategoryBase.cpp" />
     <ClCompile Include="MainCategoryDevelop.cpp" />
@@ -281,9 +279,6 @@
   <ItemGroup>
     <ProjectReference Include="..\API_BASE\API_BASE.vcxproj">
       <Project>{8ccd4d7b-7692-4e69-82b4-ec5e534f7197}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\API_CORE\API_CORE.vcxproj">
-      <Project>{80d37cf3-a0cd-4830-8ecb-9e2f124ba6d8}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
