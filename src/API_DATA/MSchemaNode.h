@@ -5,17 +5,16 @@
 
 #include "MNode.h"
 
-class AFX_EXT_CLASS MNodeSchema : public MSchemaBase<MNode>
+class AFX_EXT_CLASS MSchemaNode : public MSchemaBase<MNode>
 {
 	constexpr static int SZ_HASH_NODE = 1000;
 
 public:
-	MNodeSchema(MTableSpace* pTableSpace, int nDataType);
-	virtual ~MNodeSchema();
+	MSchemaNode(MTableSpace* pTableSpace, UINT uiType);
+	virtual ~MSchemaNode();
 
 public:
 	virtual BOOL ProcessRelation() override;
-	virtual void LazyDelete() override;
 
 };
 

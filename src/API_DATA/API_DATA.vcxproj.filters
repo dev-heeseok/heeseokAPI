@@ -52,7 +52,7 @@
     <ClCompile Include="MSchemaElement.cpp">
       <Filter>DATA_RDBMS\Mesh\ELEMENT</Filter>
     </ClCompile>
-    <ClCompile Include="MNodeSchema.cpp">
+    <ClCompile Include="MSchemaNode.cpp">
       <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClCompile>
     <ClCompile Include="MSchemaMesh.cpp">
@@ -61,7 +61,7 @@
     <ClCompile Include="MProjectSetting.cpp">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClCompile>
-    <ClCompile Include="MProjectSettingSchema.cpp">
+    <ClCompile Include="MSchemaProjectSetting.cpp">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,7 +95,7 @@
     <ClInclude Include="MNode.h">
       <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClInclude>
-    <ClInclude Include="MNodeSchema.h">
+    <ClInclude Include="MSchemaNode.h">
       <Filter>DATA_RDBMS\Mesh\NODE</Filter>
     </ClInclude>
     <ClInclude Include="MSchemaElement.h">
@@ -110,7 +110,7 @@
     <ClInclude Include="MProjectSetting.h">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClInclude>
-    <ClInclude Include="MProjectSettingSchema.h">
+    <ClInclude Include="MSchemaProjectSetting.h">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
     </ClInclude>
   </ItemGroup>

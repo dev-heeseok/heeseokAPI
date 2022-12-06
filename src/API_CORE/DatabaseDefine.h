@@ -29,6 +29,11 @@ using MKEY = int; // TODO. based on 1
 
 constexpr auto VFPTR_SIZE = sizeof(DWORD_PTR);
 constexpr auto DEFAULT_HASH_SIZE = 100;
+constexpr auto PARAM_OFF = 0x0000;
+constexpr auto PARAM_ON = 0x0001;
+
+#define SAFE_DELETE(x) {if((x)){delete (x); (x) = NULL;}}
+#define SAFE_DELETE_ARRAY(x) {if((x)){delete[] (x); (x) = NULL;}}
 
 #define HASH_INDEX(x, size) ((x) % (size))
 #define IS_VALID(x) ((x) > 0)

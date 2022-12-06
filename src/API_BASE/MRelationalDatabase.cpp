@@ -3,7 +3,7 @@
 
 #include "../API_LIB/StandardFuncLibrary.h"
 #include "../API_DATA/MRelationalDatabaseType.h"
-#include "../API_DATA/MProjectSettingSchema.h"
+#include "../API_DATA/MSchemaProjectSetting.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -37,5 +37,5 @@ void MRelationalDatabase::BuildSchema()
 {
 	// Schema 등록 순서 중요
 
-	AppendSchema(new MProjectSettingSchema(this, EnumIndex(MRelationalDatabaseType::kProjectSetting)));
+	AppendSchema(new MSchemaProjectSetting(this, EnumIndex(MRelationalDatabaseType::kProjectSetting)));
 }
