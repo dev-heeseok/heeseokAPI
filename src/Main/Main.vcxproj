@@ -224,7 +224,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="ProductDocManager.h" />
     <ClInclude Include="ProductInfoImpl.h" />
-    <ClInclude Include="ProductSerialize.h" />
+    <ClInclude Include="ProductRecord.h" />
     <ClInclude Include="Version.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -247,7 +247,7 @@
     </ClCompile>
     <ClCompile Include="ProductDocManager.cpp" />
     <ClCompile Include="ProductInfoImpl.cpp" />
-    <ClCompile Include="ProductSerialize.cpp" />
+    <ClCompile Include="ProductRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Main.reg" />
@@ -279,6 +279,15 @@
   <ItemGroup>
     <ProjectReference Include="..\API_BASE\API_BASE.vcxproj">
       <Project>{8ccd4d7b-7692-4e69-82b4-ec5e534f7197}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_CORE\API_CORE.vcxproj">
+      <Project>{80d37cf3-a0cd-4830-8ecb-9e2f124ba6d8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_DATA\API_DATA.vcxproj">
+      <Project>{51e3cc27-f8c0-4e93-864f-8ce3aacf86a5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
+      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -29,6 +29,9 @@
     <Filter Include="DATA_RDBMS\Mesh\ELEMENT">
       <UniqueIdentifier>{606e1a0f-405c-4006-9398-69732c0c8d9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DATA_FILEBLCOK">
+      <UniqueIdentifier>{a88a9a04-7fe4-4651-bb58-81237f6ae88d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API_DATA.cpp">
@@ -63,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="MSchemaProjectSetting.cpp">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="MRelationalDatabase.cpp">
+      <Filter>DATA_RDBMS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="MSchemaProjectSetting.h">
       <Filter>DATA_RDBMS\ProjectSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="MRelationalDatabase.h">
+      <Filter>DATA_RDBMS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

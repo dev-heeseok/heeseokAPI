@@ -28,4 +28,16 @@ struct tagNotification
 	{}
 };
 
+using VEC_NOTIFY = std::vector<tagNotification>;
+
+struct tagNotificationBuffer
+{
+	tagNotificationBuffer(VEC_NOTIFY* pNotify = nullptr) : m_pNotify(pNotify)
+	{}
+
+protected:
+	VEC_NOTIFY* m_pNotify;
+
+};
+
 #endif // !NOTIFY_DEF

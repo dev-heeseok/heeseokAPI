@@ -79,7 +79,7 @@
     <ClInclude Include="ProductDocManager.h">
       <Filter>PRODUCT</Filter>
     </ClInclude>
-    <ClInclude Include="ProductSerialize.h">
+    <ClInclude Include="ProductRecord.h">
       <Filter>PRODUCT</Filter>
     </ClInclude>
   </ItemGroup>
@@ -120,7 +120,7 @@
     <ClCompile Include="ProductDocManager.cpp">
       <Filter>PRODUCT</Filter>
     </ClCompile>
-    <ClCompile Include="ProductSerialize.cpp">
+    <ClCompile Include="ProductRecord.cpp">
       <Filter>PRODUCT</Filter>
     </ClCompile>
   </ItemGroup>

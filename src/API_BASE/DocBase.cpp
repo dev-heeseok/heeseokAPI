@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "DocBase.h"
-#include "MRelationalDatabase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -10,7 +9,6 @@ static char THIS_FILE[] = __FILE__;
 
 CDocBase::CDocBase()
 {
-	m_pRDBMS = std::make_shared<MRelationalDatabase>();
 }
 
 CDocBase::~CDocBase()
@@ -41,4 +39,15 @@ void CDocBase::OnCloseDocument()
 int CDocBase::Update(UINT /*uiMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/)
 {
 	return 0;
+}
+
+MRelationalDatabase* CDocBase::GetRDBMS()
+{
+	return m_pRDBMS.get();
+}
+
+void CDocBase::SetRDBMS(MRelationalDatabase* pRDBMS)
+{
+	if (pRDBMS) m_pRDBMS = std::shared_ptr<MRelationalDatabase>(pRDBMS);
+	else m_pRDBMS.reset();
 }

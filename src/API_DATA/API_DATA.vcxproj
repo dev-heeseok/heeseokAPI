@@ -230,6 +230,7 @@
     <ClCompile Include="MMesh.cpp" />
     <ClCompile Include="MNode.cpp" />
     <ClCompile Include="MProjectSetting.cpp" />
+    <ClCompile Include="MRelationalDatabase.cpp" />
     <ClCompile Include="MSchemaProjectSetting.cpp" />
     <ClCompile Include="MSchemaElement.cpp" />
     <ClCompile Include="MSchemaMesh.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="MMesh.h" />
     <ClInclude Include="MNode.h" />
     <ClInclude Include="MProjectSetting.h" />
+    <ClInclude Include="MRelationalDatabase.h" />
     <ClInclude Include="MSchemaProjectSetting.h" />
     <ClInclude Include="MRelationalDatabaseType.h" />
     <ClInclude Include="MSchemaElement.h" />

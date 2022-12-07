@@ -212,7 +212,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="API_BASE.cpp" />
-    <ClCompile Include="MRelationalDatabase.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -242,7 +241,6 @@
     <None Include="res\API_BASE.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MRelationalDatabase.h" />
     <ClInclude Include="DocBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />

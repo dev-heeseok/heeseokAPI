@@ -7,7 +7,7 @@
 #endif
 
 #include "MainDoc.h"
-#include "ProductSerialize.h"
+#include "ProductRecord.h"
 
 #include <propkey.h>
 
@@ -52,7 +52,7 @@ BOOL CMainDoc::OnNewDocument()
 	if (!CDocBase::OnNewDocument())
 		return FALSE;
 
-	return CProductSerialize::Instance().OnProductNew(this);
+	return CProductRecord::Instance().FileNew(this);
 }
 
 BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
@@ -60,12 +60,12 @@ BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	if(!CDocBase::OnOpenDocument(lpszPathName))
 		return FALSE;
 
-	return CProductSerialize::Instance().OnProductOpen(this, lpszPathName);
+	return CProductRecord::Instance().FileOpen(this, lpszPathName);
 }
 
 BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
-	if (!CProductSerialize::Instance().OnProductSave(this, lpszPathName))
+	if (!CProductRecord::Instance().FileSave(this, lpszPathName))
 		return FALSE;
 
 	return CDocBase::OnSaveDocument(lpszPathName);
@@ -73,7 +73,7 @@ BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
 
 void CMainDoc::OnCloseDocument()
 {
-	if (!CProductSerialize::Instance().OnProductClose(this))
+	if (!CProductRecord::Instance().FileClose(this))
 		return;
 
 	CDocBase::OnCloseDocument();

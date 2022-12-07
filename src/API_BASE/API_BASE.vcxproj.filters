@@ -14,11 +14,11 @@
     <Filter Include="BASE_PRODUCT">
       <UniqueIdentifier>{2c9d7033-97a5-42e1-88fd-a27cd8ba8057}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BASE_RDBMS">
-      <UniqueIdentifier>{2e8c26a2-e444-4af8-b1e8-49d8b6725335}</UniqueIdentifier>
-    </Filter>
     <Filter Include="BASE_MAIN">
       <UniqueIdentifier>{8f67a7ce-e6cf-431e-a02b-acdb2f0531ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BASE_MESSAGE">
+      <UniqueIdentifier>{2e8c26a2-e444-4af8-b1e8-49d8b6725335}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,9 +39,6 @@
     </ClCompile>
     <ClCompile Include="ProductInfo.cpp">
       <Filter>BASE_PRODUCT</Filter>
-    </ClCompile>
-    <ClCompile Include="MRelationalDatabase.cpp">
-      <Filter>BASE_RDBMS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,9 +70,6 @@
     </ClInclude>
     <ClInclude Include="ProductInfo.h">
       <Filter>BASE_PRODUCT</Filter>
-    </ClInclude>
-    <ClInclude Include="MRelationalDatabase.h">
-      <Filter>BASE_RDBMS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

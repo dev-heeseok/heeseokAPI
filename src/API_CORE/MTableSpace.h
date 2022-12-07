@@ -11,7 +11,6 @@ class AFX_EXT_CLASS MTableSpace : public CNotifySubject
 	using PTR_SCHEMA = std::shared_ptr<MSchema>;
 	using VEC_SCHEMA = std::vector<PTR_SCHEMA>;
 	using MAP_SCHEMA = std::unordered_map<UINT, int>; // type to schema index
-	using VEC_NOTIFY = std::vector<tagNotification>;
 
 public:
 	MTableSpace();
