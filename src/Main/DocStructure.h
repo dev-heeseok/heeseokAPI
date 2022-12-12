@@ -1,22 +1,29 @@
 #pragma once
 
+class MFileRecord;
+
 class CDocBase;
-class CProductRecord
+class CDocStructure
 {
 public:
-	static CProductRecord& Instance();
+	static CDocStructure& Instance();
 
 protected:
-	CProductRecord();
+	CDocStructure();
 
 public:
-	~CProductRecord();
+	~CDocStructure();
 
 public:
 	BOOL FileNew(CDocBase* pDoc);
 	BOOL FileOpen(CDocBase* pDoc, CString strPathName);
 	BOOL FileSave(CDocBase* pDoc, CString strPathName);
 	BOOL FileClose(CDocBase* pDoc);
+
+protected:
+	BOOL Read(CDocBase* pDoc, CString strPathName);
+	BOOL Write(CDocBase* pDoc, CString strPathName);
+
 
 };
 

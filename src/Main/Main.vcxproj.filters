@@ -26,8 +26,11 @@
     <Filter Include="MAIN_FRAME\Category\Interface">
       <UniqueIdentifier>{e521955d-a9a7-4267-bf91-196e527bbc74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PRODUCT">
+    <Filter Include="MAIN_PRODUCT">
       <UniqueIdentifier>{9c03d3f1-9dc6-410d-87a7-62f95a98b167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN_RDBMS">
+      <UniqueIdentifier>{632470bf-b956-4c9f-9cc4-245ee5a2c053}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,16 +74,16 @@
       <Filter>MAIN_FRAME\Category\Interface</Filter>
     </ClInclude>
     <ClInclude Include="Version.h">
-      <Filter>PRODUCT</Filter>
+      <Filter>MAIN_PRODUCT</Filter>
     </ClInclude>
     <ClInclude Include="ProductInfoImpl.h">
-      <Filter>PRODUCT</Filter>
+      <Filter>MAIN_PRODUCT</Filter>
     </ClInclude>
     <ClInclude Include="ProductDocManager.h">
-      <Filter>PRODUCT</Filter>
+      <Filter>MAIN_PRODUCT</Filter>
     </ClInclude>
-    <ClInclude Include="ProductRecord.h">
-      <Filter>PRODUCT</Filter>
+    <ClInclude Include="DocStructure.h">
+      <Filter>MAIN_RDBMS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,13 +118,13 @@
       <Filter>MAIN_FRAME\Category\Interface</Filter>
     </ClCompile>
     <ClCompile Include="ProductInfoImpl.cpp">
-      <Filter>PRODUCT</Filter>
+      <Filter>MAIN_PRODUCT</Filter>
     </ClCompile>
     <ClCompile Include="ProductDocManager.cpp">
-      <Filter>PRODUCT</Filter>
+      <Filter>MAIN_PRODUCT</Filter>
     </ClCompile>
-    <ClCompile Include="ProductRecord.cpp">
-      <Filter>PRODUCT</Filter>
+    <ClCompile Include="DocStructure.cpp">
+      <Filter>MAIN_RDBMS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

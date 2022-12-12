@@ -311,7 +311,7 @@ protected:
 	}
 	void InsertData(MDATA* lpData)
 	{
-		if (lpData == NULL)
+		if (m_pHead == NULL)
 		{
 			lpData->lprev = NULL;
 			lpData->lnext = NULL;

@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "DocBase.h"
 
+#include "../API_DATA/MRelationalDatabase.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE

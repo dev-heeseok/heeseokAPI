@@ -227,6 +227,11 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="MElement.cpp" />
+    <ClCompile Include="MFileRecord.cpp" />
+    <ClCompile Include="MFileRecordDB.cpp" />
+    <ClCompile Include="MFileRecordEOF.cpp" />
+    <ClCompile Include="MFileRecordFactory.cpp" />
+    <ClCompile Include="MFileRecordFileVer.cpp" />
     <ClCompile Include="MMesh.cpp" />
     <ClCompile Include="MNode.cpp" />
     <ClCompile Include="MProjectSetting.cpp" />
@@ -249,6 +254,11 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="MElement.h" />
+    <ClInclude Include="MFileRecord.h" />
+    <ClInclude Include="MFileRecordDB.h" />
+    <ClInclude Include="MFileRecordEOF.h" />
+    <ClInclude Include="MFileRecordFactory.h" />
+    <ClInclude Include="MFileRecordFileVer.h" />
     <ClInclude Include="MMesh.h" />
     <ClInclude Include="MNode.h" />
     <ClInclude Include="MProjectSetting.h" />

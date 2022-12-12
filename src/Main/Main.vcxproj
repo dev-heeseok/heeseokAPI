@@ -224,7 +224,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="ProductDocManager.h" />
     <ClInclude Include="ProductInfoImpl.h" />
-    <ClInclude Include="ProductRecord.h" />
+    <ClInclude Include="DocStructure.h" />
     <ClInclude Include="Version.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -247,7 +247,7 @@
     </ClCompile>
     <ClCompile Include="ProductDocManager.cpp" />
     <ClCompile Include="ProductInfoImpl.cpp" />
-    <ClCompile Include="ProductRecord.cpp" />
+    <ClCompile Include="DocStructure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Main.reg" />

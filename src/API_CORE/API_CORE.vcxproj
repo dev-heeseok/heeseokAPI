@@ -227,6 +227,9 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="DatabaseDefine.cpp" />
+    <ClCompile Include="MFileBulk.cpp" />
+    <ClCompile Include="MFileBulkDefine.cpp" />
+    <ClCompile Include="MFileBulkIO.cpp" />
     <ClCompile Include="MTableSpace.cpp" />
     <ClCompile Include="MBlock.cpp" />
     <ClCompile Include="MSchema.cpp" />
@@ -249,6 +252,9 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MArray.hpp" />
     <ClInclude Include="DatabaseDefine.h" />
+    <ClInclude Include="MFileBulk.h" />
+    <ClInclude Include="MFileBulkDefine.h" />
+    <ClInclude Include="MFileBulkIO.h" />
     <ClInclude Include="MSegment.hpp" />
     <ClInclude Include="MMatrix.hpp" />
     <ClInclude Include="MString.hpp" />

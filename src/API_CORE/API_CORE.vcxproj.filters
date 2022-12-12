@@ -29,6 +29,9 @@
     <Filter Include="CORE_RDBMS\__define__">
       <UniqueIdentifier>{57dd8ecf-48f2-4c54-86e8-75186ff465a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CORE_BULK">
+      <UniqueIdentifier>{5cdd7f90-ecc1-445e-8956-95c4021c6a5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API_CORE.cpp">
@@ -60,6 +63,15 @@
     </ClCompile>
     <ClCompile Include="NotifyDefine.cpp">
       <Filter>CORE_NOTIFY</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileBulk.cpp">
+      <Filter>CORE_BULK</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileBulkDefine.cpp">
+      <Filter>CORE_BULK</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileBulkIO.cpp">
+      <Filter>CORE_BULK</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +136,15 @@
     </ClInclude>
     <ClInclude Include="NotifyDefine.h">
       <Filter>CORE_NOTIFY</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileBulk.h">
+      <Filter>CORE_BULK</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileBulkDefine.h">
+      <Filter>CORE_BULK</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileBulkIO.h">
+      <Filter>CORE_BULK</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

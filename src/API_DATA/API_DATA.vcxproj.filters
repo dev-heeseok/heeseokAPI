@@ -29,8 +29,14 @@
     <Filter Include="DATA_RDBMS\Mesh\ELEMENT">
       <UniqueIdentifier>{606e1a0f-405c-4006-9398-69732c0c8d9f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DATA_FILEBLCOK">
-      <UniqueIdentifier>{a88a9a04-7fe4-4651-bb58-81237f6ae88d}</UniqueIdentifier>
+    <Filter Include="DATA_BULK">
+      <UniqueIdentifier>{86a527a5-f002-4cb0-9a26-f1bea935af40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_BULK\Implement">
+      <UniqueIdentifier>{e3aabf1d-292f-4b76-98e0-3d875d5a316e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA_BULK\Factory">
+      <UniqueIdentifier>{1bd75d00-d0e3-4f65-807d-5a0477e6652c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +75,21 @@
     </ClCompile>
     <ClCompile Include="MRelationalDatabase.cpp">
       <Filter>DATA_RDBMS</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileRecord.cpp">
+      <Filter>DATA_BULK</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileRecordFactory.cpp">
+      <Filter>DATA_BULK\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileRecordFileVer.cpp">
+      <Filter>DATA_BULK\Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileRecordEOF.cpp">
+      <Filter>DATA_BULK\Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="MFileRecordDB.cpp">
+      <Filter>DATA_BULK\Implement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +142,21 @@
     </ClInclude>
     <ClInclude Include="MRelationalDatabase.h">
       <Filter>DATA_RDBMS</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecord.h">
+      <Filter>DATA_BULK</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecordFactory.h">
+      <Filter>DATA_BULK\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecordFileVer.h">
+      <Filter>DATA_BULK\Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecordEOF.h">
+      <Filter>DATA_BULK\Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecordDB.h">
+      <Filter>DATA_BULK\Implement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

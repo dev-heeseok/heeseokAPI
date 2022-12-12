@@ -7,7 +7,7 @@
 #endif
 
 #include "MainDoc.h"
-#include "ProductRecord.h"
+#include "DocStructure.h"
 
 #include <propkey.h>
 
@@ -52,7 +52,7 @@ BOOL CMainDoc::OnNewDocument()
 	if (!CDocBase::OnNewDocument())
 		return FALSE;
 
-	return CProductRecord::Instance().FileNew(this);
+	return CDocStructure::Instance().FileNew(this);
 }
 
 BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
@@ -60,12 +60,12 @@ BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	if(!CDocBase::OnOpenDocument(lpszPathName))
 		return FALSE;
 
-	return CProductRecord::Instance().FileOpen(this, lpszPathName);
+	return CDocStructure::Instance().FileOpen(this, lpszPathName);
 }
 
 BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
-	if (!CProductRecord::Instance().FileSave(this, lpszPathName))
+	if (!CDocStructure::Instance().FileSave(this, lpszPathName))
 		return FALSE;
 
 	return CDocBase::OnSaveDocument(lpszPathName);
@@ -73,7 +73,7 @@ BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
 
 void CMainDoc::OnCloseDocument()
 {
-	if (!CProductRecord::Instance().FileClose(this))
+	if (!CDocStructure::Instance().FileClose(this))
 		return;
 
 	CDocBase::OnCloseDocument();
