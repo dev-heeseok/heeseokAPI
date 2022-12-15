@@ -24,7 +24,7 @@
 #include "MainView.h"
 #include "ProductDocManager.h"
 
-#include "../API_BASE/ProductInfo.h"
+#include "../API_LIB/ProductInfo.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

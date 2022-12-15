@@ -233,7 +233,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="ProductInfo.cpp" />
     <ClCompile Include="ViewBase.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -244,7 +243,6 @@
     <ClInclude Include="DocBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ProductInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ViewBase.h" />
@@ -258,6 +256,9 @@
     </ProjectReference>
     <ProjectReference Include="..\API_DATA\API_DATA.vcxproj">
       <Project>{51e3cc27-f8c0-4e93-864f-8ce3aacf86a5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
+      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

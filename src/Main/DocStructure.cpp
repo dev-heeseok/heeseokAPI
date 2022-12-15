@@ -1,8 +1,13 @@
 #include "pch.h"
 #include "DocStructure.h"
 
+#include "../API_CORE/MFileBulkDefine.h"
+#include "../API_CORE/MFileBulk.h"
+#include "../API_CORE/MSchema.h"
 #include "../API_DATA/MRelationalDatabase.h"
+#include "../API_DATA/MFileRecordDefine.h"
 #include "../API_DATA/MFileRecord.h"
+#include "../API_DATA/MFileRecordFactory.h"
 #include "../API_BASE/DocBase.h"
 
 #include <filesystem>
@@ -27,6 +32,7 @@ CDocStructure::CDocStructure()
 
 CDocStructure::~CDocStructure()
 {
+	
 }
 
 BOOL CDocStructure::FileNew(CDocBase* pDoc)
@@ -39,6 +45,7 @@ BOOL CDocStructure::FileNew(CDocBase* pDoc)
 	}
 
 	pRDBMS->Attach(pDoc);
+	pRDBMS->BindingSchema();
 
 	pDoc->SetRDBMS(pRDBMS);
 
@@ -96,21 +103,41 @@ BOOL CDocStructure::FileClose(CDocBase* pDoc)
 
 BOOL CDocStructure::Read(CDocBase* pDoc, CString strPathName)
 {
-	//MFileRecord record;
-
-	//if (!Read(pDoc, strPathName))
-	//{
-	//	TRACE(_T("[CDocStructure::FileOpen] DB Open ½ÇÆÐ\n"));
-	//	return FALSE;
-	//}
-
-	return 0;
+	return TRUE;
 }
 
 BOOL CDocStructure::Write(CDocBase* pDoc, CString strPathName)
 {
-	//MFileRecord record;
-	//record.Write();
+	MFileBulk fBulk;
+	if (!fBulk.Open(strPathName, _T("wb")))
+		return FALSE;
 
-	return 0;
+	try
+	{
+		MRelationalDatabase* pRDBMS = pDoc->GetRDBMS();
+
+		int nRecordNum = static_cast<int>(RecordType::kNum);
+		for (int i = 0; i < nRecordNum; ++i)
+		{
+			// TODO. profile record type
+			RecordType kType = static_cast<RecordType>(i);
+
+			UINT uiType = static_cast<UINT>(kType);
+			UINT uiVer = static_cast<UINT>(RECORD_VERSION_LATEST);
+
+			auto pFileRecord = MFileRecordFactory::Instance().Create(uiType, uiVer);
+			if (pFileRecord && pFileRecord->Write(pRDBMS, &fBulk))
+			{
+				// Unknown
+			}
+		}
+	}
+	catch (...)
+	{
+		ASSERT(FALSE);
+	}
+
+	fBulk.Close();
+
+	return TRUE;
 }

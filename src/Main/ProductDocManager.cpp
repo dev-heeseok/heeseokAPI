@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ProductDocManager.h"
 
-#include "../API_BASE/ProductInfo.h"
+#include "../API_LIB/ProductInfo.h"
 
 BOOL CProductDocManager::DoPromptFileName(CString& fileName, UINT nIDSTitle, DWORD lFlags, BOOL bOpenFileDialog, CDocTemplate* /*pTemplate*/)
 {

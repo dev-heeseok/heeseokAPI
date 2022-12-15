@@ -29,6 +29,9 @@
     <Filter Include="LIB_UTILITY\Math">
       <UniqueIdentifier>{1cfa8b75-375b-48f0-881b-40ca1b5d07a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LIB_UTILITY\Product Information">
+      <UniqueIdentifier>{23cec4f3-d467-4138-95f1-89912e3df350}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API_LIB.cpp">
@@ -51,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="MathLibrary.cpp">
       <Filter>LIB_UTILITY\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductInfo.cpp">
+      <Filter>LIB_UTILITY\Product Information</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="MathLibrary.h">
       <Filter>LIB_UTILITY\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductInfo.h">
+      <Filter>LIB_UTILITY\Product Information</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

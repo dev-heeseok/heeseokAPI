@@ -19,6 +19,14 @@ MTableSpace::MTableSpace()
 
 MTableSpace::~MTableSpace()
 {
+	for (auto pSchema : m_aSchema)
+	{
+		SAFE_DELETE(pSchema);
+	}
+
+	m_aSchema.clear();
+	m_mSchema.clear();
+
 }
 
 void MTableSpace::PushNotify(const tagNotification& data)
@@ -41,10 +49,25 @@ void MTableSpace::AppendSchema(MSchema* pSchema)
 		return;
 
 	UINT uiType = pSchema->GetType();
-	int nIndex = static_cast<int>(m_aSchema.size());
+	size_t nIndex = m_aSchema.size();
 
+	auto itr = m_mSchema.find(uiType);
+	if (itr != m_mSchema.end())
+	{
+		ASSERT(FALSE);
+
+		size_t idxDel = itr->second;
+		MSchema* pDelSchema = m_aSchema[idxDel];
+
+		SAFE_DELETE(pDelSchema);
+
+		auto itrDel = m_aSchema.begin() + idxDel;
+		m_aSchema.erase(itrDel);
+		m_mSchema.erase(itr);
+	}
+
+	m_aSchema.push_back(pSchema);
 	m_mSchema.insert({ uiType, nIndex });
-	m_aSchema.push_back(PTR_SCHEMA(pSchema));
 }
 
 int MTableSpace::GetSchemaCount()
@@ -55,13 +78,13 @@ int MTableSpace::GetSchemaCount()
 MSchema* MTableSpace::GetSchemaByType(UINT uiType)
 {
 	auto itr = m_mSchema.find(uiType);
-	return itr != m_mSchema.end() ? m_aSchema[itr->second].get() : nullptr;
+	return itr != m_mSchema.end() ? m_aSchema[itr->second] : nullptr;
 }
 
 MSchema* MTableSpace::GetSchemaByIndx(int nIndex)
 {
 	int nCount = GetSchemaCount();
-	return nIndex < nCount ? m_aSchema[nIndex].get() : nullptr;
+	return nIndex < nCount ? m_aSchema[nIndex] : nullptr;
 }
 
 BOOL MTableSpace::BeginTR(CString strName)

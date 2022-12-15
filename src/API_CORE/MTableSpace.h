@@ -8,9 +8,8 @@ class AFX_EXT_CLASS MTableSpace : public CNotifySubject
 {
 	friend MTransaction;
 
-	using PTR_SCHEMA = std::shared_ptr<MSchema>;
-	using VEC_SCHEMA = std::vector<PTR_SCHEMA>;
-	using MAP_SCHEMA = std::unordered_map<UINT, int>; // type to schema index
+	using VEC_SCHEMA = std::vector<MSchema*>;
+	using MAP_SCHEMA = std::unordered_map<UINT, size_t>; // type to schema index
 
 public:
 	MTableSpace();

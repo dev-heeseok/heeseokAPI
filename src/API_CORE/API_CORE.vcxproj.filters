@@ -70,9 +70,6 @@
     <ClCompile Include="MFileBulkDefine.cpp">
       <Filter>CORE_BULK</Filter>
     </ClCompile>
-    <ClCompile Include="MFileBulkIO.cpp">
-      <Filter>CORE_BULK</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\API_CORE.rc2">
@@ -141,9 +138,6 @@
       <Filter>CORE_BULK</Filter>
     </ClInclude>
     <ClInclude Include="MFileBulkDefine.h">
-      <Filter>CORE_BULK</Filter>
-    </ClInclude>
-    <ClInclude Include="MFileBulkIO.h">
       <Filter>CORE_BULK</Filter>
     </ClInclude>
   </ItemGroup>

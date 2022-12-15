@@ -229,6 +229,7 @@
     <ClCompile Include="MElement.cpp" />
     <ClCompile Include="MFileRecord.cpp" />
     <ClCompile Include="MFileRecordDB.cpp" />
+    <ClCompile Include="MFileRecordDefine.cpp" />
     <ClCompile Include="MFileRecordEOF.cpp" />
     <ClCompile Include="MFileRecordFactory.cpp" />
     <ClCompile Include="MFileRecordFileVer.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="MElement.h" />
     <ClInclude Include="MFileRecord.h" />
     <ClInclude Include="MFileRecordDB.h" />
+    <ClInclude Include="MFileRecordDefine.h" />
     <ClInclude Include="MFileRecordEOF.h" />
     <ClInclude Include="MFileRecordFactory.h" />
     <ClInclude Include="MFileRecordFileVer.h" />
@@ -278,6 +280,9 @@
   <ItemGroup>
     <ProjectReference Include="..\API_CORE\API_CORE.vcxproj">
       <Project>{80d37cf3-a0cd-4830-8ecb-9e2f124ba6d8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
+      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

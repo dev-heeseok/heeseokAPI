@@ -91,6 +91,9 @@
     <ClCompile Include="MFileRecordDB.cpp">
       <Filter>DATA_BULK\Implement</Filter>
     </ClCompile>
+    <ClCompile Include="MFileRecordDefine.cpp">
+      <Filter>DATA_BULK\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\API_DATA.rc2">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="MFileRecordDB.h">
       <Filter>DATA_BULK\Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="MFileRecordDefine.h">
+      <Filter>DATA_BULK\Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

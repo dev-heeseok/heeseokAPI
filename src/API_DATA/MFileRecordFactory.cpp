@@ -2,6 +2,12 @@
 #include "MFileRecordFactory.h"
 #include "MFileRecord.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 MFileRecordFactory& MFileRecordFactory::Instance()
 {
 	static MFileRecordFactory _instance;
@@ -28,7 +34,7 @@ MFileRecordFactory::PTR_RECORD MFileRecordFactory::Create(UINT uiType, UINT uiVe
 	VEC_RECORD& aRecord = itr->second;
 
 	auto itrFind = std::find_if(aRecord.begin(), aRecord.end(),
-		[uiVer](tagRecord& src) { return src.uiVer == uiVer; });
+		[uiVer](const tagRecord& src) { return src.uiVer == uiVer; });
 
 	auto pCreateObject = (*itrFind).pRuntimeClass->CreateObject();
 	auto pFileRecord = static_cast<MFileRecord*>(pCreateObject);
@@ -39,13 +45,12 @@ MFileRecordFactory::PTR_RECORD MFileRecordFactory::Create(UINT uiType, UINT uiVe
 BOOL MFileRecordFactory::Register(UINT uiType, UINT uiVer, CRuntimeClass* pRuntimeClass)
 {
 	auto itr = m_mRecord.find(uiType);
-
 	if (itr != m_mRecord.end())
 	{
 		VEC_RECORD& aRecord = itr->second;
 
 		auto itrFind = std::find_if(aRecord.begin(), aRecord.end(),
-			[uiVer](tagRecord& src) { return src.uiVer == uiVer; });
+			[uiVer](const tagRecord& src) { return src.uiVer == uiVer; });
 
 		ASSERT(itrFind == aRecord.end());
 
@@ -72,7 +77,7 @@ BOOL MFileRecordFactory::Unregister(UINT uiType, UINT uiVer)
 		VEC_RECORD& aRecord = itr->second;
 
 		auto itrFind = std::find_if(aRecord.begin(), aRecord.end(),
-			[uiVer](tagRecord& src) { return src.uiVer == uiVer; });
+			[uiVer](const tagRecord& src) { return src.uiVer == uiVer; });
 
 		ASSERT(itrFind != aRecord.end());
 

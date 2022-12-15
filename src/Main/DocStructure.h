@@ -1,6 +1,6 @@
 #pragma once
 
-class MFileRecord;
+enum class RecordType;
 
 class CDocBase;
 class CDocStructure

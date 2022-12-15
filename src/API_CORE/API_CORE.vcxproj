@@ -229,7 +229,6 @@
     <ClCompile Include="DatabaseDefine.cpp" />
     <ClCompile Include="MFileBulk.cpp" />
     <ClCompile Include="MFileBulkDefine.cpp" />
-    <ClCompile Include="MFileBulkIO.cpp" />
     <ClCompile Include="MTableSpace.cpp" />
     <ClCompile Include="MBlock.cpp" />
     <ClCompile Include="MSchema.cpp" />
@@ -254,7 +253,6 @@
     <ClInclude Include="DatabaseDefine.h" />
     <ClInclude Include="MFileBulk.h" />
     <ClInclude Include="MFileBulkDefine.h" />
-    <ClInclude Include="MFileBulkIO.h" />
     <ClInclude Include="MSegment.hpp" />
     <ClInclude Include="MMatrix.hpp" />
     <ClInclude Include="MString.hpp" />
@@ -272,6 +270,11 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="API_CORE.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API_LIB\API_LIB.vcxproj">
+      <Project>{c80d1159-6066-485c-a551-55a49f29a81b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

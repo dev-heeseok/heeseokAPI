@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../API_BASE/ProductInfo.h"
+#include "../API_LIB/ProductInfo.h"
 
 class CProductInfoImpl : public IProductInfo
 {
